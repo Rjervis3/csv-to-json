@@ -8,8 +8,7 @@ const processCsv = (csvFilePath) => {
 
 	} else {
 		csv().fromFile(csvFilePath)
-		.on('end_parsed', (jsonArrObj, err)=>{
-			if(err)  return process.exit(1); //handle errors for csv
+		.then((jsonArrObj)=>{
 	  		fs.writeFile('customer-data.json', JSON.stringify(jsonArrObj, null, 2), (error)=>{
       			if (error) return process.exit(1) //handle errors for writing file
       			console.log(`customer-data.json written -- ${jsonArrObj.length} customers processed`)

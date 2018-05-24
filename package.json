@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "csvtojson": "2.0.0",
-    "fs": "0.0.1-security"
+    "file-system": "2.2.2"
   }
 }
